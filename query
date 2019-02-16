@@ -1,0 +1,73 @@
+curl -XGET 127.0.0.1:9200/movies/movie/_search?pretty -d '
+{
+"query":{
+"match_phrase":{
+"title":"star wars"
+}}}'
+{
+  "took" : 41,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1,
+    "max_score" : 1.256985,
+    "hits" : [
+      {
+        "_index" : "movies",
+        "_type" : "movie",
+        "_id" : "122886",
+        "_score" : 1.256985,
+        "_source" : {
+          "id" : "122886",
+          "title" : "Star Wars: Episode VII - The Force Awakens",
+          "year" : 2015,
+          "genre" : [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "IMAX"
+          ]
+        }
+      }
+    ]
+  }
+}
+
+{
+  "took" : 10,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1,
+    "max_score" : 0.3164503,
+    "hits" : [
+      {
+        "_index" : "movies",
+        "_type" : "movie",
+        "_id" : "135569",
+        "_score" : 0.3164503,
+        "_source" : {
+          "id" : "135569",
+          "title" : "Star Trek Beyond",
+          "year" : 2016,
+          "genre" : [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ]
+        }
+      }
+    ]
+  }
+}
